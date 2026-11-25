@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joyeux anniversaire Virginia ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --nuit:#1a0b2e; --violet:#5b21b6; --rose:#ff4d8d;
+    --or:#ffd166; --turquoise:#3ee6d0; --blanc:#fff7fb;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Poppins',system-ui,sans-serif;color:var(--blanc);text-align:center;
+    background:linear-gradient(135deg,var(--nuit),var(--violet),#a3195b,var(--nuit));
+    background-size:400% 400%;animation:fond 18s ease infinite;overflow-x:hidden;
+  }
+  @keyframes fond{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+
+  #confettis{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:50}
+  .flottant{position:fixed;bottom:-80px;z-index:0;pointer-events:none;animation:monter linear forwards;opacity:.75}
+  @keyframes monter{to{transform:translateY(-120vh) rotate(360deg)}}
+
+  header,section,footer{position:relative;z-index:1}
+  header{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:24px}
+  h1 span{display:block}
+  .l1{font-size:clamp(1.3rem,6vw,2.6rem);font-weight:300;letter-spacing:1px}
+  .l2{
+    font-family:'Pacifico',cursive;font-weight:400;font-size:clamp(3.2rem,16vw,7.5rem);line-height:1.5;
+    background:linear-gradient(90deg,var(--or),var(--rose),var(--turquoise),var(--or));
+    background-size:300% auto;-webkit-background-clip:text;background-clip:text;
+    color:transparent;animation:brille 6s linear infinite;padding:0 10px;
+  }
+  @keyframes brille{to{background-position:300% center}}
+  .l3{font-family:'Pacifico',cursive;font-weight:400;font-size:clamp(1.7rem,8vw,3.5rem);color:var(--or)}
+  h1 .coeur{display:inline-block;margin-left:6px;animation:battre 1.1s ease-in-out infinite}
+  @keyframes battre{0%,100%{transform:scale(1)}30%{transform:scale(1.35)}}
+  header .btn{margin-top:36px}
+
+  button.btn{
+    font:700 1rem 'Poppins',sans-serif;color:#fff;border:0;border-radius:50px;padding:15px 32px;cursor:pointer;
+    background:linear-gradient(90deg,var(--rose),#ff8a5b);box-shadow:0 8px 25px rgba(255,77,141,.5);
+    transition:transform .2s;
+  }
+  button.btn:active{transform:scale(.94)}
+
+  section{padding:60px 18px;max-width:1000px;margin:auto}
+  h2{font-family:'Pacifico',cursive;font-weight:400;font-size:2rem;color:var(--or);margin-bottom:28px}
+  .reveal{opacity:0;transform:translateY(40px);transition:all .8s ease}
+  .reveal.visible{opacity:1;transform:none}
+
+  /* Gâteau */
+  .gateau{width:220px;margin:0 auto 28px;cursor:pointer}
+  .bougies{display:flex;justify-content:center;gap:28px;height:70px;align-items:flex-end}
+  .bougie{width:10px;height:42px;border-radius:4px;position:relative;
+    background:repeating-linear-gradient(45deg,#fff 0 5px,var(--turquoise) 5px 10px)}
+  .flamme{position:absolute;top:-22px;left:-2px;width:14px;height:20px;
+    border-radius:50% 50% 45% 45%;background:radial-gradient(circle at 50% 70%,#fff,var(--or),#ff6b00);
+    box-shadow:0 0 18px 6px rgba(255,180,40,.7);animation:feu .25s infinite alternate;transition:opacity .4s}
+  @keyframes feu{to{transform:scale(1.15) rotate(4deg)}}
+  .eteint .flamme{opacity:0}
+  .etage{margin:auto;border-radius:16px 16px 6px 6px;border-top:12px solid #fff}
+  .haut{width:160px;height:55px;background:var(--rose)}
+  .bas{width:220px;height:70px;background:#8b3ee6}
+
+  /* Galerie */
+  .galerie{display:grid;grid-template-columns:repeat(auto-fill,minmax(145px,1fr));gap:14px}
+  .carte{background:#fff;padding:7px 7px 10px;border-radius:10px;box-shadow:0 10px 25px rgba(0,0,0,.35);
+    transform:rotate(-2deg);transition:transform .3s;cursor:pointer}
+  .carte:nth-child(even){transform:rotate(2deg)}
+  .carte:hover{transform:scale(1.05)}
+  .carte img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:6px;display:block}
+  .legende{color:var(--violet);font-family:'Pacifico',cursive;font-size:.9rem;margin-top:8px}
+  .videos figcaption{margin-top:8px;font-family:'Pacifico',cursive;color:var(--or)}
+  .manquant{aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;padding:10px;
+    border:2px dashed var(--rose);border-radius:6px;color:var(--violet);font-size:.85rem;word-break:break-word}
+
+  .videos{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px;align-items:end}
+  .videos video{display:block;width:100%;max-height:75vh;border-radius:16px;background:#000;border:3px solid var(--rose)}
+  .videos .manquant{aspect-ratio:16/9;color:#fff}
+
+  .message{background:rgba(255,255,255,.12);backdrop-filter:blur(8px);border-radius:24px;
+    padding:30px 22px;font-size:1.1rem;line-height:1.8;border:1px solid rgba(255,255,255,.25)}
+  .signature{margin-top:18px;font-family:'Pacifico',cursive;color:var(--or)}
+
+  #zoom{position:fixed;inset:0;background:rgba(10,3,20,.94);display:none;align-items:center;justify-content:center;z-index:100;padding:16px}
+  #zoom.ouvert{display:flex}
+  #zoom img{max-width:100%;max-height:100%;border-radius:12px}
+  footer{padding:40px 20px 60px;opacity:.85}
+</style>
+</head>
+<body>
+
+<canvas id="confettis"></canvas>
+
+<header>
+  <h1>
+    <span class="l1">Joyeux anniversaire</span>
+    <span class="l2">Virginia...</span>
+    <span class="l3">Aka Vinicius<span class="coeur">❤️</span></span>
+  </h1>
+  <button class="btn" id="surprise">🎁 Ouvre ta surprise</button>
+</header>
+
+<section id="cadeau" class="reveal">
+  <h2>Fais un vœu</h2>
+  <div class="gateau" id="gateau">
+    <div class="bougies">
+      <div class="bougie"><div class="flamme"></div></div>
+      <div class="bougie"><div class="flamme"></div></div>
+      <div class="bougie"><div class="flamme"></div></div>
+    </div>
+    <div class="etage haut"></div>
+    <div class="etage bas"></div>
+  </div>
+  <button class="btn" id="souffler">🌬️ Souffle les bougies</button>
+</section>
+
+<section class="reveal">
+  <h2>Nos plus beaux souvenirs 📸</h2>
+  <div class="galerie" id="galerie"></div>
+</section>
+
+<section class="reveal">
+  <h2>En action 🎬</h2>
+  <div class="videos" id="videos"></div>
+</section>
+
+<section class="reveal">
+  <h2>Un petit mot 💌</h2>
+  <div class="message">
+    <p id="texte"></p>
+    <p class="signature" id="signature"></p>
+  </div>
+</section>
+
+<footer>Fait avec ❤️ rien que pour toi</footer>
+
+<div id="zoom"><img src="" alt="Photo agrandie"></div>
+
+<script>
+/* =====================================================
+   ✏️ MODIFIE UNIQUEMENT CETTE PARTIE
+   ===================================================== */
+const PHOTOS = [
+  { src: "photo1.jpg", legende: "Toute petite 🥰" },
+  { src: "photo2.jpg", legende: "Happiness 🖤" },
+  { src: "photo3.jpg", legende: "Le style Vinicius 😎" },
+  { src: "photo4.jpg", legende: "Après l'effort 😮‍💨" }
+];
+
+const VIDEOS = [
+  { src: "video1.mp4", affiche: "affiche1.jpg", legende: "L'évolution ✨" },
+  { src: "video2.mp4", affiche: "affiche2.jpg", legende: "Au service 🏐" },
+  { src: "video3.mp4", affiche: "affiche3.jpg", legende: "À l'entraînement 💪" },
+  { src: "video4.mp4", affiche: "affiche4.jpg", legende: "Entre coéquipières 😄" }
+];
+
+const MESSAGE = "Virginia, en ce jour spécial, je te souhaite une santé de fer, beaucoup de joie et la réussite dans tout ce que tu entreprends. Continue de briller sur le terrain comme dans la vie. Joyeux anniversaire ! 🎉";
+
+const SIGNATURE = "— Koloko";
+/* ===================================================== */
+
+const $ = id => document.getElementById(id);
+
+function manquant(nom){
+  const d = document.createElement("div");
+  d.className = "manquant";
+  d.textContent = "Ajoute le fichier " + nom;
+  return d;
+}
+
+// Photos
+PHOTOS.forEach(({ src, legende }) => {
+  const carte = document.createElement("div");
+  carte.className = "carte";
+  const img = new Image();
+  img.alt = "Souvenir avec Virginia";
+  img.onerror = () => img.replaceWith(manquant(src));
+  img.onclick = () => { $("zoom").querySelector("img").src = img.src; $("zoom").classList.add("ouvert"); };
+  img.src = src;
+  const texte = document.createElement("p");
+  texte.className = "legende";
+  texte.textContent = legende;
+  carte.append(img, texte);
+  $("galerie").appendChild(carte);
+});
+$("zoom").onclick = () => $("zoom").classList.remove("ouvert");
+
+// Vidéos
+VIDEOS.forEach(({ src, affiche, legende }) => {
+  const bloc = document.createElement("figure");
+  const v = document.createElement("video");
+  v.controls = true;
+  v.playsInline = true;
+  v.preload = "metadata";
+  v.poster = affiche;
+  v.onerror = () => v.replaceWith(manquant(src));
+  v.onplay = () => document.querySelectorAll("video").forEach(a => { if (a !== v) a.pause(); });
+  v.src = src;
+  const texte = document.createElement("figcaption");
+  texte.textContent = legende;
+  bloc.append(v, texte);
+  $("videos").appendChild(bloc);
+});
+
+$("signature").textContent = SIGNATURE;
+
+// Message tapé lettre par lettre
+let ecrit = false;
+function ecrire(){
+  if (ecrit) return;
+  ecrit = true;
+  const lettres = Array.from(MESSAGE);
+  let i = 0;
+  const t = setInterval(() => {
+    $("texte").textContent += lettres[i++];
+    if (i >= lettres.length) clearInterval(t);
+  }, 35);
+}
+
+// Apparition au défilement
+const obs = new IntersectionObserver(entrees => {
+  entrees.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.classList.add("visible");
+    if (e.target.querySelector("#texte")) ecrire();
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll(".reveal").forEach(s => obs.observe(s));
+
+// Confettis
+const canvas = $("confettis"), ctx = canvas.getContext("2d");
+let bouts = [], enCours = false;
+function taille(){ canvas.width = innerWidth; canvas.height = innerHeight; }
+addEventListener("resize", taille); taille();
+
+function feteConfettis(n = 180){
+  const couleurs = ["#ffd166","#ff4d8d","#3ee6d0","#ffffff","#a855f7"];
+  for (let i = 0; i < n; i++) bouts.push({
+    x: Math.random() * canvas.width, y: -Math.random() * canvas.height * 0.6,
+    vx: (Math.random() - .5) * 3, vy: 2 + Math.random() * 4,
+    t: 5 + Math.random() * 7, a: Math.random() * 6,
+    c: couleurs[Math.floor(Math.random() * couleurs.length)]
+  });
+  if (!enCours){ enCours = true; animer(); }
+}
+function animer(){
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  bouts.forEach(b => {
+    b.x += b.vx; b.y += b.vy; b.a += .1;
+    ctx.save(); ctx.translate(b.x, b.y); ctx.rotate(b.a);
+    ctx.fillStyle = b.c; ctx.fillRect(-b.t/2, -b.t/4, b.t, b.t/2);
+    ctx.restore();
+  });
+  bouts = bouts.filter(b => b.y < canvas.height + 20);
+  if (bouts.length) requestAnimationFrame(animer); else enCours = false;
+}
+
+// Ballons, volleyballs et cœurs qui montent
+setInterval(() => {
+  if (document.hidden) return;
+  const e = document.createElement("div");
+  const icones = ["🎈","🏐","💖","✨","🎈"];
+  e.className = "flottant";
+  e.textContent = icones[Math.floor(Math.random() * icones.length)];
+  e.style.left = Math.random() * 92 + "vw";
+  e.style.fontSize = 22 + Math.random() * 28 + "px";
+  e.style.animationDuration = 7 + Math.random() * 6 + "s";
+  e.onanimationend = () => e.remove();
+  document.body.appendChild(e);
+}, 800);
+
+$("surprise").onclick = () => { feteConfettis(); $("cadeau").scrollIntoView(); };
+
+function souffler(){
+  const g = $("gateau");
+  if (g.classList.toggle("eteint")){
+    feteConfettis(250);
+    $("souffler").textContent = "✨ Que ton vœu se réalise !";
+  } else {
+    $("souffler").textContent = "🌬️ Souffle les bougies";
+  }
+}
+$("souffler").onclick = souffler;
+$("gateau").onclick = souffler;
+
+feteConfettis(120);
+</script>
+</body>
+</html>
